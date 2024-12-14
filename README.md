@@ -1,4 +1,5 @@
-**How Quantum Computers Enhance Bitcoin's Proof-of-Work Security**
+## How Quantum Computers Enhance Bitcoin's Proof-of-Work Security 
+*(and how to implement post-quantum signatures into Bitcoin, when the time comes)*
 
 Bitcoin relies on two foundational cryptographic primitives: the SHA-256 hash function for its Proof of Work (PoW) consensus mechanism, and elliptic curve cryptography (ECC) for securing wallets and transactions. These cryptographic systems underpin Bitcoin's security, but they are also the focus of quantum computing breakthroughs such as Grover's algorithm (affecting SHA-256) and Shor's algorithm (targeting ECC). In this article, we explore how Bitcoin adapts to these challenges, including how quantum computers actually reinforce its PoW system and how easy it is to replace Bitcoin's signature scheme, in the event of an eventual Quantum Supercomputer decades from now.
 
