@@ -45,7 +45,7 @@ impl<A: SigningAlgorithm> std::fmt::Debug for Transaction<A> {
         let signature_debug = self
             .signature
             .as_ref()
-            .map(|sig| A::serialize_signature(sig));
+            .map(|sig| hex::encode(A::serialize_signature(sig)));
         f.debug_struct("Transaction")
             .field("from", &self.from)
             .field("to", &self.to)

@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+hex = "0.4.3"
 pqcrypto-dilithium = { version = "0.5.0", features = ["serialization"] }
 pqcrypto-traits = "0.3.5"
 rand = "0.8.5"
