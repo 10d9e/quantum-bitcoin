@@ -39,7 +39,6 @@ impl SigningAlgorithm for Secp256k1Algorithm {
     }
 
     fn serialize_signature(signature: &Self::Signature) -> Vec<u8> {
-        let sig = signature.serialize_der();
-        sig.to_vec()
+        signature.serialize_der().to_vec()
     }
 }

@@ -5,8 +5,8 @@ use quantum_bitcoin::Wallet;
 
 fn main() {
     // Create wallets using Secp256k1Algorithm
-    let wallet1: Wallet<Secp256k1Algorithm> = Wallet::new();
-    let wallet2: Wallet<Secp256k1Algorithm> = Wallet::new();
+    let wallet1: Wallet<Secp256k1Algorithm> = Wallet::default();
+    let wallet2: Wallet<Secp256k1Algorithm> = Wallet::default();
 
     println!("Wallet 1 Address: {}", wallet1.get_address());
     println!("Wallet 2 Address: {}", wallet2.get_address());

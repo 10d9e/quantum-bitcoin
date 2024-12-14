@@ -1,13 +1,13 @@
 use crate::signing::SigningAlgorithm;
-use pqcrypto_dilithium::dilithium2::*;
-use pqcrypto_traits::sign::PublicKey as PublicKeyTrait;
+use pqcrypto_dilithium::dilithium2::{keypair, open, sign, SecretKey};
+use pqcrypto_traits::sign::PublicKey;
 use pqcrypto_traits::sign::SignedMessage;
 
 #[derive(Debug)]
 pub struct DilithiumAlgorithm;
 
 impl SigningAlgorithm for DilithiumAlgorithm {
-    type PrivateKey = pqcrypto_dilithium::dilithium2::SecretKey;
+    type PrivateKey = SecretKey;
     type PublicKey = pqcrypto_dilithium::dilithium2::PublicKey;
     type Signature = pqcrypto_dilithium::dilithium2::SignedMessage;
 
@@ -25,7 +25,7 @@ impl SigningAlgorithm for DilithiumAlgorithm {
         message: &str,
         signature: &Self::Signature,
     ) -> bool {
-        let verifiedmsg = open(&signature, &public_key).unwrap();
+        let verifiedmsg = open(signature, public_key).unwrap();
         verifiedmsg == message.as_bytes()
     }
 

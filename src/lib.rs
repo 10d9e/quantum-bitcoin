@@ -10,6 +10,12 @@ pub struct Wallet<A: SigningAlgorithm> {
     public_key: A::PublicKey,
 }
 
+impl<A: SigningAlgorithm> Default for Wallet<A> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<A: SigningAlgorithm> Wallet<A> {
     pub fn new() -> Self {
         let (private_key, public_key) = A::generate_keypair();
@@ -112,7 +118,7 @@ impl Block {
         let target = "0".repeat(difficulty);
         self.hash = self.calculate_hash(); // Ensure hash is initialized
 
-        while &self.hash[..difficulty.min(self.hash.len())] != target {
+        while self.hash[..difficulty.min(self.hash.len())] != target {
             self.nonce += 1;
             self.hash = self.calculate_hash();
         }

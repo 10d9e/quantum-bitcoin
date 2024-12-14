@@ -5,8 +5,8 @@ use quantum_bitcoin::Wallet;
 
 fn main() {
     // Create wallets using DilithiumAlgorithm
-    let wallet1: Wallet<DilithiumAlgorithm> = Wallet::new();
-    let wallet2: Wallet<DilithiumAlgorithm> = Wallet::new();
+    let wallet1: Wallet<DilithiumAlgorithm> = Wallet::default();
+    let wallet2: Wallet<DilithiumAlgorithm> = Wallet::default();
 
     println!("Wallet 1 Address: {}", wallet1.get_address());
     println!("Wallet 2 Address: {}", wallet2.get_address());
